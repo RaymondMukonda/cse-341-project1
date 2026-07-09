@@ -3,6 +3,7 @@ const { ObjectId } = require('mongodb');
 
 // GET all users
 const getAll = async (req, res) => {
+  //#swagger.tags=['Users']
   try {
     const db = mongodb.getDatabase().db('cse341-project1');
     const result = await db.collection('contacts').find();
@@ -17,6 +18,7 @@ const getAll = async (req, res) => {
 
 // GET single user
 const getSingle = async (req, res) => {
+  //#swagger.tags=['Users']
   try {
     const userId = new ObjectId(req.params.id);
     const db = mongodb.getDatabase().db('cse341-project1');
@@ -32,6 +34,7 @@ const getSingle = async (req, res) => {
 
 // CREATE (POST)
 const createUser = async (req, res) => {
+  //#swagger.tags=['Users']
   const user = {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
@@ -56,6 +59,7 @@ const createUser = async (req, res) => {
 
 // UPDATE (PUT)
 const updateUser = async (req, res) => {
+  //#swagger.tags=['Users']
   const userId = new ObjectId(req.params.id);
   const user = {
     firstName: req.body.firstName,
@@ -81,6 +85,7 @@ const updateUser = async (req, res) => {
 
 // DELETE
 const deleteUser = async (req, res) => {
+  //#swagger.tags=['Users']
   const userId = new ObjectId(req.params.id);
 
   try {

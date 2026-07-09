@@ -4,3 +4,33 @@ GET http://localhost:3000/users
 
 ### Get one contact
 GET http://localhost:3000/users/6a4d75dfba7b2a042ad3a8b5
+
+
+### Create a new contact
+POST http://localhost:3000/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Josh",
+    "lastName": "Maxwell",
+    "email": "max@example.com",
+    "favoriteColor": "Purple",
+    "birthday": "2002-07-12"
+}
+
+### Lets update the User color
+PUT http://localhost:3000/users/6a4d75dfba7b2a042ad3a8b5
+Content-Type: application/json
+
+{
+  "firstName": "Rammy",
+  "lastName": "Smith",
+  "email": "john@example.com",
+  "favoriteColor": "Green",
+  "birthday": "1990-05-15"
+}
+
+
+### Lets detele a user we just made
+DELETE http://localhost:3000/users/6a4fcaa2868f1ae806b9f58d
+
